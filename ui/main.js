@@ -9,7 +9,7 @@ function moveRight () {
  marginLeft = marginLeft+1;
  img.style.marginLeft = marginLeft+ 'px';
 }
-img.onClick = function() {
+img.onclick = function() {
     var interavl = setInterval(moveRight, 50);
     
   img.style.marginLeft = '100px'  ;
