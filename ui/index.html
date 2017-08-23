@@ -18,5 +18,21 @@
             </script>
         <script type="text/javascript" src="/ui/main.js">
         </script>
+        <h1>This is a test</h1>
+
+<button>Click me to move image</button>
+
+<img src="ui/madi.png" id="image" />
+
+<script>
+    var img = document.getElementById("image");
+    var marginLeft = 0;
+    img.onclick = function() {
+        setInterval( function() {
+            marginLeft += 10;
+            img.style.marginLeft = marginLeft.toString() + "px";
+        } , 100)
+    }
+</script>
     </body>
 </html>
