@@ -50,7 +50,7 @@ submit.onclick = function () {
 //make a request
 var nameInput = document.getElementById('name');
 var name = nameInput.value;
-request.open('GET', 'http://bbhargavi1012.imad.hasura-app.io/submit-name?name=', + name, true);
+request.open('GET', 'http://bbhargavi1012.imad.hasura-app.io/submit-name?name=' + name, true );
 request.send(null);
     //made a request to the server and send the name
    
