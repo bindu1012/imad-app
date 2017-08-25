@@ -5,6 +5,12 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+app.get('/favicon.ico', function (req, res) {
+
+  res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
+
+});
+
 var articles= { 
 'article-one': {
     title:'Article-One Bindu',
@@ -43,11 +49,7 @@ var articles= {
             </p>`
 }
 };
-app.get('/favicon.ico', function (req, res) {
 
-  res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
-
-});
 function createTemplate(data){
     var title=data.title;
     var date=data.date;
