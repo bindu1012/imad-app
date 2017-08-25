@@ -78,14 +78,14 @@ app.get('/counter', function(req,res) {
     counter=counter+1;
     res.send(counter.toString());
 });
-//var names=[];
-//app.get('/submit-name/:name', function (req, res){ // URL ://submit-name?name=xxxxx
+var names=[];
+app.get('/submit-name/:name', function (req, res){ // URL ://submit-name?name=xxxxx
    //get the name from the request
-  // var name=req.query.name;
-   //names.push(name);
+   var name=req.params.name;
+   names.push(name);
    //JSON:javascript notation
-   //res.send(JSON.stringify(names));
-//});
+   res.send(JSON.stringify(names));
+});
 app.get('/:articleName', function (req,res){
     //it means articleName==article-one
     //articles[articleName]={} content object for article one
