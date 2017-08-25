@@ -43,6 +43,11 @@ var articles= {
             </p>`
 }
 };
+app.get('/favicon.ico', function (req, res) {
+
+  res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
+
+});
 function createTemplate(data){
     var title=data.title;
     var date=data.date;
