@@ -5,11 +5,6 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-app.get('/favicon.ico', function (req, res) {
-
-  res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
-
-});
 
 var articles= { 
 'article-one': {
@@ -77,6 +72,12 @@ var htmlTemplate=`
 `;
 return htmlTemplate;
 }
+app.get('/favicon.ico', function (req, res) {
+
+  res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
+
+});
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
