@@ -119,8 +119,8 @@ app.get('/submit-name', function (req, res){ // URL ://submit-name?name=xxxxx
 app.get('/article/:articleName', function (req,res){
     //it means articleName==article-one
     //articles[articleName]={} content object for article one
-    
-    pool.query("SELECT * FROM TABLE article WHERE title = " + req.prams.articleName, function (err, result) {
+    //SELECT * FROM article WHERE title='article-one'
+    pool.query("SELECT * FROM TABLE article WHERE title = '" + req.prams.articleName + "'", function (err, result) {
       if(err) {
           res.status(500).send(err.toString());
       } else {
