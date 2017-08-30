@@ -116,10 +116,22 @@ app.get('/submit-name', function (req, res){ // URL ://submit-name?name=xxxxx
    //JSON:javascript notation
    res.send(JSON.stringify(names));
 });
-app.get('/:articleName', function (req,res){
+app.get('/article/:articleName', function (req,res){
     //it means articleName==article-one
     //articles[articleName]={} content object for article one
-    var articleName=req.params.articleName;
+    
+    pool.query("SELECT * FROM TABLE article WHERE title = " + req.prams.articleName, function (err, result) {
+      if(err) {
+          res.status(500).send(err.toString());
+      } else {
+          if(result.rows.lenght ===0) {
+              res.status(404).send('article not found');
+          } else {
+              var articleData = result.rows[0];
+              res.send(createTemplate(articleData));
+          }
+      }
+    });
      res.send(createTemplate(articles[articleName]));
 });
 
