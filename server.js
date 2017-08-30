@@ -116,7 +116,7 @@ app.get('/submit-name', function (req, res){ // URL ://submit-name?name=xxxxx
    //JSON:javascript notation
    res.send(JSON.stringify(names));
 });
-app.get('/articles/:articleName', function (req,res){
+app.get('/articles/:articleName', function (req,res) {
     //it means articleName==article-one
     //articles[articleName]={} content object for article one
     //SELECT * FROM article WHERE title='article-one'
